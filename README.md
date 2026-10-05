@@ -66,7 +66,15 @@ slots. Unused capacity is not a test of the underlying physical drive's health.
 
 ## Run
 
-Python 3.11 or newer, NumPy, pyftpdlib, and Tk are required when running from source:
+Simply download the release for your operating system and processor. If you are using any of the macOS versions, since I currently do not have an Apple Developer account, after you move **RAIDiant.app** to **Applications**, you need to run the following command in terminal to be able to then use the app:
+
+```sh
+xattr -dr com.apple.quarantine "/Applications/RAIDiant.app"
+```
+
+This removes the quarantine flag from RAIDiant only. It does **not** disable Gatekeeper system-wide or sign or notarize the app.
+
+To run from source, Python 3.11 or newer, NumPy, pyftpdlib, and Tk are required:
 
 ```sh
 python -m pip install -e ".[dev]"
