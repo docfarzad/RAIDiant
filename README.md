@@ -4,9 +4,7 @@
 
 # RAIDiant
 
-**Your storage, together.**
-
-Turn ordinary files on your drives into one protected array. Choose your level
+Turn sparse ordinary drives into one protected array. Choose your level
 of redundancy, add your files, and browse everything in a simple desktop app
 for **Windows, macOS, and Debian**.
 
