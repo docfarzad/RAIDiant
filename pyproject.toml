@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raidiant"
+version = "0.3.4"
+description = "Portable file-backed storage with configurable member failure tolerance"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0,<3", "pyftpdlib>=2.0,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pyinstaller>=6.11,<7"]
+
+[project.gui-scripts]
+raidiant = "raidiant.launcher:main"
+
+[tool.setuptools.packages.find]
+include = ["raidiant*"]
+
+[tool.setuptools.package-data]
+raidiant = ["assets/*.png", "assets/*.ico", "assets/*.icns", "assets/*.desktop"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

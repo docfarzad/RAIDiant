@@ -1,0 +1,17 @@
+# macOS - two normal build commands, run from the RAIDiant project folder.
+# Requires a Python environment with Tk and pip; one-time setup is below.
+# Output: dist/RAIDiant.app, wrapping the one-file dist/RAIDiant executable.
+# The app bundle supplies the provided Finder/Dock icon. No tests or app launch.
+
+.venv/bin/python -m pip install -r requirements-build.txt
+.venv/bin/python -m PyInstaller --clean --noconfirm RAIDiant.spec
+
+# ONE-TIME SETUP ONLY IF NEEDED (not part of the normal build):
+# Install Homebrew from https://brew.sh/ if needed, then:
+# brew install python@3.13 python-tk@3.13
+# "$(brew --prefix python@3.13)/bin/python3.13" -m venv .venv
+#
+# Homebrew Python is externally managed: use the project environment above.
+# No environment activation, pip upgrade, or project installation is needed.
+# If you already use a writable Python 3.11+ with Tk and pip, replace
+# .venv/bin/python in both build commands with that interpreter and skip setup.

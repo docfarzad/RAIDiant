@@ -1,0 +1,16 @@
+# Windows - two normal build commands, run from the RAIDiant project folder.
+# Requires Python 3.13 with Tk and pip already installed.
+# Output: dist\RAIDiant.exe. No tests or app launch.
+
+py -3.13 -m pip install -r requirements-build.txt
+py -3.13 -m PyInstaller --clean --noconfirm RAIDiant.spec
+
+# ONE-TIME SETUP ONLY IF NEEDED (not part of the normal build):
+# Install Python, then close and reopen PowerShell:
+# winget install --id Python.Python.3.13 --exact --source winget --accept-package-agreements --accept-source-agreements
+#
+# Optional isolated environment, created once:
+# py -3.13 -m venv .venv
+# Then use these two commands instead; activation is unnecessary:
+# & .\.venv\Scripts\python.exe -m pip install -r requirements-build.txt
+# & .\.venv\Scripts\python.exe -m PyInstaller --clean --noconfirm RAIDiant.spec

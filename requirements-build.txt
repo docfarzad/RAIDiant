@@ -1,0 +1,15 @@
+# Runtime and build versions from the Windows validation environment.
+numpy==2.2.4
+pyftpdlib==2.2.0
+pyasynchat==1.0.5; python_version >= "3.12"
+pyasyncore==1.0.5; python_version >= "3.12"
+PyInstaller==6.13.0
+pyinstaller-hooks-contrib==2025.4
+setuptools==80.9.0
+wheel==0.45.1
+packaging==24.2
+altgraph==0.17.4
+pefile==2023.2.7; sys_platform == "win32"
+pywin32-ctypes==0.2.3; sys_platform == "win32"
+# macOS-only build dependency; not installed or validated on the Windows host.
+macholib==1.16.3; sys_platform == "darwin"

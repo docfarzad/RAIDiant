@@ -1,0 +1,33 @@
+# Debian 12/13, amd64 or arm64 - from the full RAIDiant project folder.
+# RECOMMENDED: ready-to-run dependency installer + executable + .deb builder.
+# Uses sudo for apt dependencies; runs pip and PyInstaller in .venv-debian.
+# Does not install or launch RAIDiant. Temporary package/build staging is removed.
+
+bash build-debian.sh
+
+# Output: dist/raidiant_0.3.4-1_amd64.deb (or _arm64.deb), plus dist/RAIDiant.
+# The script prints the exact installation command for its generated package.
+# Example for amd64, when you are ready to install:
+# sudo apt install ./dist/raidiant_0.3.4-1_amd64.deb
+# Installation adds RAIDiant to Applications and /usr/bin; app is in /opt/raidiant.
+# No Python installation is required on the receiving desktop.
+# Build on Debian 12 for compatibility with Debian 12 and newer.
+# A Debian 13 build requires its newer glibc, recorded in package dependencies.
+
+# EXECUTABLE ONLY ALTERNATIVE - two normal build commands.
+# Requires a Python environment with Tk and pip; one-time setup is below.
+# Output: dist/RAIDiant, plus optional RAIDiant.png and RAIDiant.desktop launcher assets.
+# No tests or app launch. See README.md for optional per-user launcher installation.
+
+.venv/bin/python -m pip install -r requirements-build.txt
+.venv/bin/python -m PyInstaller --clean --noconfirm RAIDiant.spec
+
+# ONE-TIME SETUP ONLY IF NEEDED (not part of the normal build):
+# sudo apt-get update
+# sudo apt-get install -y python3 python3-venv python3-tk binutils ca-certificates
+# python3 -m venv .venv
+#
+# Debian's system Python is externally managed: use the project environment.
+# No environment activation, pip upgrade, or project installation is needed.
+# If you already have a suitable user-managed Python with Tk and pip, use its
+# interpreter in the two build commands instead and skip setup.

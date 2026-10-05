@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=RAIDiant
+Comment=Manage portable redundant storage arrays
+Exec=RAIDiant
+Icon=raidiant
+Terminal=false
+Categories=Utility;Archiving;
+StartupWMClass=RAIDiant
