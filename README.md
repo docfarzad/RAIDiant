@@ -64,7 +64,9 @@ slots. Unused capacity is not a test of the underlying physical drive's health.
 
 ## Run
 
-Simply download the release for your operating system and processor. If you are using any of the macOS versions, since I currently do not have an Apple Developer account, after you move **RAIDiant.app** to **Applications**, you need to run the following command in terminal to be able to then use the app:
+Simply download a [release](https://github.com/docfarzad/RAIDiant/releases/) for your operating system and processor and start using the app. 
+
+If you are using any of the macOS versions, since I currently do not have an Apple Developer account, after you move **RAIDiant.app** to **Applications**, you need to run the following command in terminal to be able to then use the app:
 
 ```sh
 xattr -dr com.apple.quarantine "/Applications/RAIDiant.app"
@@ -145,7 +147,7 @@ and Linux keep the file-type filters; open-file dialogs are unchanged.
     strings, including possible leading zeroes, saved in this installation's
     settings until regenerated. Local-only access is the default; LAN access
     must be selected explicitly. The default port is 2121. The app and array
-    must remain open, and closing the array stops its server.
+    must remain open, and closing the array stops its server. Simultaneous upload is not possible. You need to adjust your FTP client to run a single concurrent upload at a time. Streaming media directly from the FTP is also not possible due to the sparse nature of the storage system. 
 
 FTP supports directory listing, uploads, downloads, folders, deletion, and rename.
 It streams directly to/from the array without staging whole files on the host.
