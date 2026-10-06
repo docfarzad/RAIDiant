@@ -106,7 +106,7 @@ and Linux keep the file-type filters; open-file dialogs are unchanged.
    runs any needed capacity check and continues to confirmation. An amount above
    the safe recommendation is rejected without replacing the entered value.
    New members grow as data is uploaded; only their metadata/recovery area is reserved initially.
-   Previously created, fully preallocated arrays remain supported.
+   Previously created, fully preallocated arrays remain supported. Bear in mind, if the storage location for the member files do not support our full range of operations, the app will not allow features that use those operations. For example, certain SMB files servers do not allow writing blocks of individual size. When encountering a member that is located on such a file server the app will refuse to upload files to it leaving you with only the possibility to read from the array. 
 2. **Open array:** select one member, then select the additional members in the
    member dialog. At least N−M distinct valid members are required. Headers and
    transaction histories are checked before writes are enabled.
