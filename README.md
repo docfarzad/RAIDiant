@@ -199,6 +199,17 @@ An explicitly read-only session must be closed and reopened with write access
 before repair or rebuilding. Degraded sessions automatically become writable
 after successful repair/rebuild; they do not need to be reopened.
 
+## RAIDiant advantages over Unraid’s traditional array
+
+- **Use free space on drives you already use:** Member files coexist with ordinary files, without dedicating or reformatting whole drives.
+- **Allocate storage as needed:** Member files grow with uploaded data instead of reserving their full configured capacity upfront.
+- **Choose higher failure tolerance:** Configure more than two parity members to tolerate more simultaneous member failures, at the cost of usable capacity.
+- **Check individual chunks for corruption:** Stored checksums help identify damaged data and reconstruct it when sufficient healthy redundancy remains.
+- **Run on your existing computer:** Use Windows, macOS, or Linux without replacing your operating system.
+- **Move the array between supported platforms:** Cleanly close it, transfer its member files, and reopen it in RAIDiant.
+
+These advantages do not guarantee better overall safety or capacity efficiency. Unraid uses mixed-size disks efficiently, and checksum protection is also available with its supported filesystems. Physical-drive protection requires RAIDiant members on separate drives; redundancy still needs backups.
+
 ## Capacity and performance
 
 - Equal member lengths are chosen per shared allocation pool, with a reserve of
